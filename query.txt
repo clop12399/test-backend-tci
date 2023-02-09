@@ -1,0 +1,4 @@
+SELECT * FROM (SELECT brand, type, price, n_type FROM cars)
+PIVOT(
+  MAX(type||': '||price) for n_type in ('type_1' Type_1, 'type_2' Type_2, 'type_3' Type_3)
+)
