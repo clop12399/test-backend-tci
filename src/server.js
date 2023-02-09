@@ -3,6 +3,7 @@ const app = express()
 const port = 3000
 
 const football = require('./routes/football')
+const containLetters = require('./routes/containLetters')
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -12,6 +13,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/football', football)
+app.use('/containLetters', containLetters)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
